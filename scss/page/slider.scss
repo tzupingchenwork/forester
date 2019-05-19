@@ -1,0 +1,142 @@
+@import "../base/var";
+@import "../base/font";
+@import "../base/common";
+
+.screen-hot-plan {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    // outline: 2px solid blue;
+  }
+
+  .hot_plan_slider {
+    position: relative;
+    transform-style: preserve-3d;
+    // top: 50%;
+    // transform: translateY(-50%);
+    .btn_group {
+      position: absolute;
+      bottom: -60vh;
+      width: 100%;
+      // outline: 2px solid green;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      #leftBtn,
+      #rightBtn {
+        // outline: 2px solid green;
+        font-size: 30px;
+        padding: 2%;
+        display: block;
+        position: relative;
+        bottom: -200px;
+      }
+      #leftBtn {
+        padding-right: 2%;
+      }
+      #rightBtn {
+        padding-right: 2%;
+      }
+    }
+  }
+
+  .title_box {
+    margin: 120px auto 30px;
+    text-align: center;
+    // outline: 2px solid red;
+    img {
+      width: 30vh;
+    }
+    h2 {
+      font-size: 0;
+    }
+  }
+
+  .cardFrame{
+    // padding: 2.5%;
+    // outline: 1px solid red;
+    position: absolute;
+      &::after {
+          content:'';
+          width: 90%;
+          height: 93%;
+          position: absolute;
+          top: 3%;
+          left: 4%;
+          border: 3px solid #947f70;
+          border-radius: 13px;
+    }
+    .card{
+      border: 5px dotted #947f70;
+      border-radius: 13px;
+      box-shadow: 10px 11px 14px -8px rgba(0,0,0,0.62);
+      background:url(http://api.thumbr.it/whitenoise-361x370.png?background=e8c789ff&noise=f2e2c6&density=19&opacity=46);
+      // background-color: #E8C689;
+      // outline: 1px solid red;
+      padding: 5%;
+      height: 100%;
+      position: relative;
+      .imgborder{
+        height:60%;
+        border-radius: 13px;
+        overflow: hidden;
+        // outline: 1px solid red;
+        img{
+          width: 130%;
+        }
+      }
+      .subTitle{
+        @include  md-title(#4286f4);
+        margin: 10px auto; 
+      }
+      .desc{
+        @include bodyP();
+      }
+      .starPlanGroup {
+          width: 90%;
+        //   outline: 2px solid red;
+          position: absolute;
+          bottom: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        .equalValue {
+          color: $green;
+          img {
+              width: 15px;
+              vertical-align: middle;
+          }
+        }  
+        .addToPlan {
+          @include btn(#eb715f,#ffdb3f);
+          // margin: 10px auto; 
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+        }
+      }
+    }// card
+  } // cardFrame
+
+  .mainCardFrame {
+    width: 80%;
+    height: 50vh;
+    left: 10%;
+    
+  }
+
+  .secondCardFrame,
+  .thirdCardFrame {
+    width: 70%;
+    height: 40vh;
+    top: 5vh;
+  }
+
+  .secondCardFrame {
+    left: 2.5%;
+  }
+
+  .thirdCardFrame {
+    right: 2.5%;
+  }
+

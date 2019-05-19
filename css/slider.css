@@ -1,0 +1,203 @@
+@charset "UTF-8";
+div, h1, h2, h3, h4, h5, h6, p, span {
+  font-family: '微軟正黑體';
+  letter-spacing: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.screen-hot-plan {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+
+.hot_plan_slider {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.hot_plan_slider .btn_group {
+  position: absolute;
+  bottom: -60vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hot_plan_slider .btn_group #leftBtn,
+.hot_plan_slider .btn_group #rightBtn {
+  font-size: 30px;
+  padding: 2%;
+  display: block;
+  position: relative;
+  bottom: -200px;
+}
+
+.hot_plan_slider .btn_group #leftBtn {
+  padding-right: 2%;
+}
+
+.hot_plan_slider .btn_group #rightBtn {
+  padding-right: 2%;
+}
+
+.title_box {
+  margin: 120px auto 30px;
+  text-align: center;
+}
+
+.title_box img {
+  width: 30vh;
+}
+
+.title_box h2 {
+  font-size: 0;
+}
+
+.cardFrame {
+  position: absolute;
+}
+
+.cardFrame::after {
+  content: '';
+  width: 90%;
+  height: 93%;
+  position: absolute;
+  top: 3%;
+  left: 4%;
+  border: 3px solid #947f70;
+  border-radius: 13px;
+}
+
+.cardFrame .card {
+  border: 5px dotted #947f70;
+  border-radius: 13px;
+  -webkit-box-shadow: 10px 11px 14px -8px rgba(0, 0, 0, 0.62);
+          box-shadow: 10px 11px 14px -8px rgba(0, 0, 0, 0.62);
+  background: url(http://api.thumbr.it/whitenoise-361x370.png?background=e8c789ff&noise=f2e2c6&density=19&opacity=46);
+  padding: 5%;
+  height: 100%;
+  position: relative;
+}
+
+.cardFrame .card .imgborder {
+  height: 60%;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.cardFrame .card .imgborder img {
+  width: 130%;
+}
+
+.cardFrame .card .subTitle {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #4286f4;
+  letter-spacing: 1.5;
+  margin: 10px auto;
+}
+
+.cardFrame .card .desc {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+}
+
+.cardFrame .card .starPlanGroup {
+  width: 90%;
+  position: absolute;
+  bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cardFrame .card .starPlanGroup .equalValue {
+  color: #3ba261;
+}
+
+.cardFrame .card .starPlanGroup .equalValue img {
+  width: 15px;
+  vertical-align: middle;
+}
+
+.cardFrame .card .starPlanGroup .addToPlan {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+}
+
+.cardFrame .card .starPlanGroup .addToPlan:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.mainCardFrame {
+  width: 80%;
+  height: 50vh;
+  left: 10%;
+}
+
+.secondCardFrame,
+.thirdCardFrame {
+  width: 70%;
+  height: 40vh;
+  top: 5vh;
+}
+
+.secondCardFrame {
+  left: 2.5%;
+}
+
+.thirdCardFrame {
+  right: 2.5%;
+}
+/*# sourceMappingURL=slider.css.map */

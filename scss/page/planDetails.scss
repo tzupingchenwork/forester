@@ -1,0 +1,183 @@
+@import "../base/var";
+@import "../base/font";
+@import "../base/common";
+@import "../layout/desktop";
+@import "../page/plan.scss";
+
+// /* width */
+// ::-webkit-scrollbar {
+//     width: 15px; 
+//   }
+  
+//   /* Track */
+//   ::-webkit-scrollbar-track {
+//     background: #f8e958; 
+//   }
+  
+//   /* Handle */
+//   ::-webkit-scrollbar-thumb {
+//     background: #dc719d;
+//     border-radius: 20px; 
+//   }
+  
+//   /* Handle on hover */
+//   ::-webkit-scrollbar-thumb:hover {
+//     background: #e13764; 
+//   }
+
+  #go-to-pre-page {
+    @include btn($white,$pink);
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+  }
+
+.plan-container-confirmation::before {
+  background: none;
+}
+  
+.header_title_background {
+  // border: 2px solid red;
+  img {
+    display: block;
+    margin: 0 auto 50px;
+    max-width: 300px;
+    height: auto;
+    // border: 2px solid red;
+  }
+  h2 {
+    display: none;
+  }
+}
+
+.event-detail-box {
+  width: 94%;
+  height: fit-content;
+  // outline: 1px solid red;
+  border: 5px solid $black;
+  border-radius: 13px;
+  position: relative;
+  margin: 2%;
+  cursor: pointer;
+  transition: .3s ease;
+  display: flex;
+  &:hover {
+    background-color: #fdf7bd;
+    transition: .3s ease;
+  }
+
+  .event_drop_zone {
+    width: 25%;
+  }
+
+  .eventItem {
+    width: 20%;
+    height: 100px;
+    border: 5px solid $black;
+    border-radius: 13px;
+    position: relative;
+    margin: 2%;
+    cursor: default;
+    transition: .3s ease;
+    display: flex;
+    .event-cover {
+      width: 30%;
+      height: 100px;
+      margin: 10px 10px 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      // outline: 1px solid red;
+      overflow: hidden;
+      img{
+        width: 130%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .eventItem:hover {
+    background-color: rgba(253, 248, 187, 0.8);
+    box-shadow: 0px 0px 3px #796a5a inset; }
+
+  .event-cover {
+    width: 41%;
+    height: 100px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    // outline: 1px solid red;
+    overflow: hidden;
+    border-radius: 10px;
+    img{
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .event-txt-box {
+    // outline: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0 10px 0;
+    height: 100px;
+    position: relative;
+    width: $width - 48%;
+    h4 {
+      @include md-title($blue);
+    }
+    table{
+      margin: 10px 0 10px 0;
+      width: 150px;
+      td {
+        // outline: 1px solid red;
+        width: 15px;
+        @include bodyP;
+        text-align: left;
+        vertical-align: middle;
+        img {
+          width: 25px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .value-pic-box{
+      @include bodyP;
+      color: #4da45d;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+      img {
+        width: 18px;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .event-hour-price {
+    @include bodyP;
+    height: 100%;
+    width: 21%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    // outline: 2px solid red;
+    .event-hour-mark {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .event-hour {
+      position: absolute;
+    }
+    .event-price-mark {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .event-price {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }  
+  }
+}

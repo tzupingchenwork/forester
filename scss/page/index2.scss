@@ -1,0 +1,1890 @@
+@import '../base/font';
+@import '../base/var';
+@import '../base/reset';
+@import '../base/common';
+@import '../page/blog.scss';
+
+@mixin btns($btnColor, $bthBgc) {
+  cursor: pointer;
+  position: relative;    
+  top: 0;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: $btnColor;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $bthBgc;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 1px 0px #af8c92,
+              0px 2px 0px #a57e85,
+              0px 3px 0px #9e757c,
+              0px 4px 0px #946970;  
+  &:hover {
+      top: 4px;
+      box-shadow: 0px 1px 0px #946970,
+                  0px 1px 0px #9e757c,
+                  0px 2px 0px #a57e85,
+                  0px 2px 0px #af8c92,
+  }
+}
+
+//===============
+// 函式
+//===============
+@import '../mixin/mixin';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.index_dt {
+  display: block;
+}
+
+.index_RWD {
+  display: none;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+}
+    
+
+.section_Intor,
+.section_pupularEvent,
+.section_monthPlans,
+.section_buyTickets,
+.section_blog{
+    position:relative;
+    background : url( http://api.thumbr.it/whitenoise-361x370.png?background=ebe4d4ff&noise=fffcff&density=71&opacity=33) center 0 repeat;
+
+}
+
+// ====================================
+// 第一屏 Banner  
+
+.section_Intor{
+  // background-color: #E8E4CD;
+
+    // background-color: #fafafa;
+
+    // background : url(../images/bg-story.jpg) center 0 repeat;
+    // background : url( http://api.thumbr.it/whitenoise-361x370.png?background=ebe4d4ff&noise=fffcff&density=71&opacity=33) center 0 repeat;
+    height: 1500px;
+    overflow: hidden;
+
+    *{
+        position:absolute;
+    }
+
+    .intro{
+        width:100%;
+        height:100%;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:0;
+        overflow:hidden;
+    }
+
+    .slogan {
+        // outline: 1px solid red;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+    }
+
+    .scrollinfo{
+        width:100%;
+        margin-top:93px;
+        text-align:center;
+        position:fixed;
+        top:50%;
+        left:0;
+        z-index:3;
+    }
+
+    .scrollinfo .img {
+        // background-image: url(../images/scroll-info.png);
+        // outline: 2px solid red;
+        width: 150px;
+        height: 46px;
+        text-align: center;
+        margin: 0 auto 4px;
+        position: static;
+        // animation: scroll .8s steps(7) infinite;
+        @include bodyP;
+        position: relative;
+        font-weight: bold;
+        img {
+          // outline: 2px solid red;
+          position: absolute;
+
+          left: 25%;
+          width: 40%;
+          display: block;
+          margin: 0 auto;
+        }
+    }
+
+}
+
+
+// .slogan{width:100%;top:50%;left:40%;}
+.posleft{width:30%;top:20%;z-index:0;}
+.posright{width:20%;top:15%;z-index:-1;}
+.green1-1{width:10%;bottom:-80px;left:5%; z-index:2;}
+.green1-3{width:10%;bottom:0;left:14%;z-index:2;}
+.green2-1{width:15%;bottom:0;left:10%;z-index:0;}
+.green2-2{width:8%;bottom:0%;left:0;z-index:1;}
+.green3-1{width:15%;bottom:0%;left:0;z-index:1;}
+
+.index_backpack{width:12%;bottom:0px;left:10%;z-index:2;
+  transform: rotate(-15deg)}
+.index_ticket{width:8%;bottom:0px;left:4%;z-index:3;
+  transform: rotate(15deg)}
+.index_map{width:15%;bottom:0px;left:5%;z-index:1;
+  transform: rotate(-10deg)}
+.index_notebook{width:13%;bottom:0px;left:-12%;z-index:5;
+  transform: rotate(-10deg)}
+  
+
+  @media screen and (max-width:768px){
+    .section_Intor{
+        .slogan{
+            width:50%;
+        }
+    }
+    .posleft{width:40%;top:25%;z-index:0;}
+    .posright{width:30%;top:20%;z-index:0;}
+    .green1-1{width:20%;bottom:5%; z-index:2;}
+    .green1-2{width:20%;bottom:5%;left:10%;z-index:1;}
+    .green1-3{width:20%;bottom:5%;left:20%;z-index:0;}
+    .green2-1{width:20%;top:68%;left:0;z-index:0;}
+    .green2-2{width:10%;top:62%;left:-10%;z-index:1;}
+    .green2-3{width:20%;top:70%;left:20%;z-index:2;}
+    .green3-1{width:20%;top:70%;left:0;z-index:0;}
+    .green3-2{width:20%;top:65%;right:0;z-index:1;}
+}
+
+@media screen and (max-width:960px){
+
+}
+
+// ====================================
+// 第二屏 熱門活動
+
+
+.section_pupularEvent {
+    // *{
+    //   // outline: 1px solid blue;
+    // }
+    // background-color: #E8E4CD;
+
+    background-color: #fafafa;
+
+    // background:  url( http://api.thumbr.it/whitenoise-361x370.png?background=f8e1dcff&noise=ffffff&density=38&opacity=35) center 0 repeat;
+    z-index:1;
+    overflow: hidden;
+
+    .title{
+      font-size: 0;
+      img{
+        top:15%;
+        left: 3%;
+        position: absolute;
+        width:18%;
+      }
+    }
+  
+    .popularplan{
+      vertical-align: top;
+      // outline: 1px solid red;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .cardFrame{
+        width: 33%;
+        padding: 15px;
+        // outline: 1px solid red;
+        // height:300px;
+        position: relative;
+          &::after {
+              content:'';
+              width: 90%;
+              height: 93%;
+              position: absolute;
+              top: 3%;
+              left: 4%;
+              border: 3px solid $brown;
+              border-radius: 13px;
+        }
+        .card{
+          border: 5px dotted $brown;
+          border-radius: 13px;
+          box-shadow: 10px 11px 14px -8px rgba(0,0,0,0.62);
+          background:url(http://api.thumbr.it/whitenoise-361x370.png?background=e8c789ff&noise=f2e2c6&density=19&opacity=46);
+          // background-color: #E8C689;
+          // outline: 1px solid red;
+          padding: 5%;
+          height: 100%;
+          position: relative;
+          .imgborder{
+            height:50%;
+            border-radius: 5px;
+            overflow: hidden;
+            img{
+              width: 150%;
+            }
+          }
+          .subTitle{
+            @include  md-title(#4286f4);
+            margin: 10px auto; 
+          }
+          .desc{
+            @include bodyP();
+          }
+          .starPlanGroup {
+              width: 90%;
+              // outline: 2px solid red;
+              position: absolute;
+              bottom: 5px;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+            .equalValue {
+              color: $green;
+                img {
+                    width: 15px;
+                    // vertical-align: middle;
+                }
+            }  
+            .addToPlan {
+                @include btns($red,$yellow);
+                // margin: 10px auto; 
+                height: 20px;
+                width: 20px;
+                line-height: 20px;
+            }
+          }
+        }// card
+      } // cardFrame
+
+      
+    } // popularplan
+
+    .makeplansBtn{
+      z-index: 10000;
+      cursor: pointer;
+      transition: .3s;
+      height: 50px;
+      display: inline-block;
+      font-family: '微軟正黑體';
+      font-size: 18px;
+      font-weight: bold;
+      color: $white;
+      text-align: center;
+      vertical-align: middle;
+      background-color: $doubledarkGreen;
+      position: absolute;
+      border-radius: 10px;
+      border: none;
+      width: 250px;
+      line-height: 50px;
+      top: 62%;
+      left:77%;
+      box-shadow: 0px 1px 0px #af8c92,
+                  0px 2px 0px #a57e85,
+                  0px 3px 0px #9e757c,
+                  0px 4px 0px #946970;  
+      &:hover {
+        top: 63%;
+        box-shadow: 0px 1px 0px #946970,
+                  0px 1px 0px #9e757c,
+                  0px 2px 0px #a57e85,
+                  0px 2px 0px #af8c92,
+      }
+    }
+
+    .runningBear{
+      width: 6%;
+    }
+    .butterfly{
+      width: 3%;
+    }
+    .MoveBranch {
+      position: absolute;
+      left:0;
+      bottom: 0px;
+      width: 100%;
+      z-index: -1;
+    }
+    #hotplan-airballoon {
+      position: absolute;
+      width: 15%;
+      z-index: -2;
+      right: -270px;
+      top: 250px;
+    }
+}
+  
+
+@media screen and (max-width:768px){
+  .section_pupularEvent {
+    .popularplan{
+      .cardFrame{
+          width: 100%;
+      }
+    }
+  }
+}
+
+
+// ====================================
+// 第三屏 本月主打行程
+.section_monthPlans{
+  // background-color: #E8E4CD;
+
+    background-color: #fafafa;
+    height: 2600px;
+    // margin-top: -5px;
+    // margin-bottom: -5px;
+    overflow: hidden;
+
+    .depth-10 {
+        z-index: 100;
+    }
+
+    #bg_cloud_one{
+      position: relative;
+      // left: -1000px;
+      // outline: 2px solid red;
+    }
+    #bg_cloud_two{
+      position: relative;
+      left: 1900px;
+      bottom: -400px;
+      // outline: 2px solid blue;
+    }
+    #bg_cloud_three{
+      position: relative;
+      left: -1200px;
+      bottom: -800px;
+      // outline: 2px solid green;
+    }
+
+    .contentsBox {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+
+        #title_monthly{
+          top:28%;
+          left: 3%;
+          position: absolute;
+          width:18%;
+          z-index: 900;
+        }
+
+        .title{
+            @include big-title(#4286f4);
+            h2 {
+            margin: 25% 0 5% 0;
+            letter-spacing: 10px;
+            }
+        }
+
+        .subTitle{
+            @include  md-title(#4286f4);
+        }
+
+        .monthly_desc{
+            @include sm-title($doubledarkGreen);
+            letter-spacing: 5px;
+            line-height: 1.5;
+        }
+        
+        .event{
+            position: absolute;
+            width:25%;
+            z-index: 1000;
+
+
+            img{
+                width:100%;
+                border-radius: 13px;
+                margin-bottom: 10px;
+                border: 5px solid white;
+            }
+            .desc {
+              @include bodyP;
+              letter-spacing: 5px;
+            }
+            .subtitle{
+              @include  sm-title(#4286f4);
+              letter-spacing: 10px;
+              margin: 10px 0;
+              padding: 20px;
+              display: block;
+              background-image: url(../images/cloud_bg.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+
+              position: relative;
+
+          }
+        }
+
+        .event:nth-child(2){
+            top: 30%;
+            left: 60%;
+        }
+        .event:nth-child(3){
+            top: 45%;
+            left: 10%;
+        }
+        .event:nth-child(4){
+            top: 60%;
+            left: 60%;
+        }
+        .event:nth-child(5){
+            top: 80%;
+            left: 20%;
+        }
+
+        .event:nth-child(6){
+          top: 2500px;
+          // top: 95%;
+          left: 70%;
+        }
+
+        .makeplans {
+          // @include btns($white,$doubledarkGreen);
+          // position: absolute;
+          // width: 250px;
+          // line-height: 50px;
+          // box-shadow: 0px 2504px 0px #af8c92,
+          // 0px 2503px 0px #a57e85,
+          // 0px 2502px 0px #9e757c,
+          // 0px 2501px 0px #946970;  
+          // &:hover {
+          //   top: 2504px;
+          //   box-shadow: 0px 2501px 0px #946970,
+          //               0px 2501px 0px #9e757c,
+          //               0px 2502px 0px #a57e85,
+          //               0px 2502px 0px #af8c92,
+          // }
+
+          z-index: 10000;
+          cursor: pointer;
+          transition: .3s;
+          height: 50px;
+          display: inline-block;
+          font-family: '微軟正黑體';
+          font-size: 18px;
+          font-weight: bold;
+          color: $white;
+          text-align: center;
+          vertical-align: middle;
+          background-color: $doubledarkGreen;
+          position: absolute;
+          border-radius: 10px;
+          border: none;
+          width: 250px;
+          line-height: 50px;
+          bottom: 50%;
+          left:77%;
+          box-shadow: 0px 1px 0px #af8c92,
+                      0px 2px 0px #a57e85,
+                      0px 3px 0px #9e757c,
+                      0px 4px 0px #946970;  
+          &:hover {
+            bottom: 51%;
+            box-shadow: 0px 1px 0px #946970,
+                      0px 1px 0px #9e757c,
+                      0px 2px 0px #a57e85,
+                      0px 2px 0px #af8c92,
+          }
+        }
+         
+        .a-layer {
+            position: absolute;
+        } 
+        
+        .a-layer.svg{
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            bottom: 80vh;
+        }
+
+        .dropBear{
+            position: absolute;
+            // left:50%;
+            width:15%;
+        }
+
+        // #dropBear{
+        //     position: absolute;
+        //     width:15%;
+        // }
+
+        .a-layer.cover {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 40%;
+            background: #fafafa;
+            background: linear-gradient(#fafafa 30%, rgba(255, 255, 255, 0) 100%);
+        }
+    
+        .a-layer.clouds {
+            position: absolute;
+            left: 0;
+            right: 0;
+            transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+            background-position: 0 200%;
+        }
+
+        a{
+            font-size: 30px;
+        }
+    }        
+}
+
+
+.a-layer.svg .clouds:nth-child(1){
+  transform: translateX(50%) translateY(14%) scale(0.3);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(1){
+    transform: translateX(50%) translateY(14%) scale(0.6);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(2){
+  transform: translateX(20%) translateY(2%) scale(0.2);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(2){
+    transform: translateX(20%) translateY(2%) scale(0.4);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(3){
+  transform: translateX(15%) translateY(25%) scale(0.3);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(3){
+    transform: translateX(15%) translateY(25%) scale(0.6);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(4){
+  transform: translateX(18%) translateY(33%) scale(0.3);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(4){
+    transform: translateX(18%) translateY(33%) scale(0.6);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(5){
+  transform: translateX(47%) translateY(20%) scale(0.4);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(5){
+    transform: translateX(47%) translateY(20%) scale(0.8);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(6){
+  transform: translateX(62%) translateY(50%) scale(0.4);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(6){
+    transform: translateX(62%) translateY(50%) scale(0.8);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(7){
+  transform: translateX(18%) translateY(23%) scale(0.4);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(7){
+    transform: translateX(18%) translateY(23%) scale(0.8);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(8){
+  transform: translateX(76%) translateY(46%) scale(0.4);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(8){
+    transform: translateX(76%) translateY(46%) scale(0.8);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(9){
+  transform: translateX(54%) translateY(6%) scale(0.4);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(9){
+    -webkit-transform: translateX(54%) translateY(6%) scale(0.8);
+    transform: translateX(54%) translateY(6%) scale(0.8);
+  }
+}
+
+.a-layer.svg .clouds:nth-child(10){
+  transform: translateX(11%) translateY(72%) scale(0.4);
+  filter: alpha(opacity=100);
+  opacity: 1;
+  fill: #c8e6f5;
+}
+
+@media screen and (min-width: 800px) {
+  .a-layer.svg .clouds:nth-child(10){
+    transform: translateX(11%) translateY(72%) scale(0.8);
+  }
+}
+
+
+
+// ====================================
+// 第四屏 前往訂票
+.section_buyTickets{
+    // background-image: linear-gradient(to top, #91cdff,#fafafa);
+    background-color: #fafafa;
+    // background-color: #E8E4CD;
+    
+    height: 1000px;
+    overflow: hidden;
+    
+    .bk_moun{
+      // outline: 1px solid red; 
+      position: absolute;
+      bottom: 0;
+      width:100%;
+      transform: scale(1.4,1.4);
+      z-index: 0;
+    }
+    
+
+    .bk_bear{
+      position: absolute;
+      bottom: 2%;
+      left:30%;
+      width:8%;
+    }
+
+    .title{
+      font-size: 0;
+      img{
+        top:25%;
+        left: 3%;
+        position: absolute;
+        width:18%;
+        z-index: 10;
+      }
+    }
+
+    .ticketsBord{
+      // border: 40px solid transparent;
+      border-width: 40px;
+      border-style: solid;
+      -moz-border-image: url(../images/order_frame.png) 40 40 round;    /* 給 Firefox 看*/
+      -webkit-border-image:  url(../images/order_frame.png) 40 40 round;    /* 給 Safari 與 Chrome 看*/
+      -o-border-image: url(../images/order_frame.png) 40 40 round;        /* 給 Opera 看*/
+      border-image: url(../images/order_frame.png) 40 40 round;
+      // border-image: url(../images/order_frame.png) 60 round;
+      vertical-align: top;
+      width: 55%;
+      height: fit-content;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .tickFrame{
+          background: no-repeat center/ contain url(../images/ticketBg.png);
+          width: 33%;
+          padding: 10px;
+          // outline: 2px solid red;
+          position: relative;
+          .tickPic {
+            // outline: 2px solid blue;
+            width: 82%;
+            height: 35%;
+            overflow: hidden;
+            margin: 0 auto;
+          }
+          .bear{
+            // outline: 2px solid red;
+            display: block;
+            width: 100%;
+          }
+          .tickTxt {
+            text-align: center;
+            margin: 5%;
+            h3 {
+              @include big-title($white);
+            }
+            p {
+              margin: 5%;
+            }
+            .tickRange {
+              @include sm-title($yellow);
+            }
+            .tickPrice {
+              display: none;
+            }
+          }
+          .tickAmt {
+            margin-top:15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+              width: 50%;
+              height: 38px;
+              background-color: $white;
+              line-height: 2.3;
+              border: none;
+              vertical-align: middle;
+              text-align: center;            
+            }
+            button {
+              cursor: pointer;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #F0B81B;
+              margin: 0 5%;
+              border: none;
+              i {
+                width: 20px;
+                height: 20px;
+                font-size: 20px;
+                color: $white;
+              }
+              &:hover{
+                background: rgb(122, 96, 23);
+              }
+            }
+            .countTkt{
+              color: $white;
+              font-size: 25px;
+            }
+          }
+        }
+    } // tickets
+
+    .buyTicketsbtn{
+      cursor: pointer;
+      transition: .3s;
+      height: 50px;
+      display: inline-block;
+      font-family: '微軟正黑體';
+      font-size: 18px;
+      font-weight: bold;
+      color: $white;
+      text-align: center;
+      vertical-align: middle;
+      background-color: $doubledarkGreen;
+      position: absolute;
+      border-radius: 10px;
+      border: none;
+      width: 250px;
+      line-height: 50px;
+      top: 80%;
+      left:70%;
+      box-shadow: 0px 1px 0px #af8c92,
+                  0px 2px 0px #a57e85,
+                  0px 3px 0px #9e757c,
+                  0px 4px 0px #946970;  
+      &:hover {
+        top: 81%;
+        box-shadow: 0px 1px 0px #946970,
+                  0px 1px 0px #9e757c,
+                  0px 2px 0px #a57e85,
+                  0px 2px 0px #af8c92,
+      }
+    }
+
+  
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+// ====================================
+// 第五屏 手札
+.section_blog{
+  background-color: #fafafa;
+  // background-image: linear-gradient(to top,#1A45A0,#91cdff);
+  height: 1000px;
+  overflow: hidden;
+
+  #title_blog{
+      font-size: 0;
+    img{
+      top:10%;
+      left: 3%;
+      position: absolute;
+      width:18%;
+      z-index: 100;
+    }
+  }
+
+  .blog-left-container {
+    margin-left: 12%;
+    width: 76%;
+    text-align: left;
+    // outline: 1px solid red;
+  }
+
+  .blogRanking {  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    z-index: 5;
+    // outline: 2px solid red;
+  }
+
+  .blogRanking-author {
+    span {
+      @include sm-title($black);
+    }
+  }
+
+  .blogRanking-main-content {
+    width: 80%;
+    margin-left: 12%;
+    // outline: 2px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    .blogRanking-article-left-group {
+      width: 40%;
+    }
+    .blogRanking-article-left {
+      .blogRanking-photo #blog-cover{
+        border-radius: 13px;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      p {
+        @include bodyP;
+      }    
+    }
+  }
+
+
+  .readMore{
+    cursor: pointer;
+    @include bodyP;
+    color: #4286f4;
+  }
+
+  .blogBoard{
+    vertical-align: top;
+    // outline: 1px solid red;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    img{
+      width: 40%;
+    }
+  }
+
+  .blogRanking-event-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    } 
+  }
+  .blogRanking-event {
+    transition: all 1s;
+  }
+
+  .blogRanking-event:hover .blogRanking-event-info {
+    visibility: hidden;
+  }
+
+  .blogRanking-event{
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    margin: 0 0 5% 8%;
+    // border: 5px solid $brown;
+    background-color: $white;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    visibility: visible;
+    transition: 1s;
+    // outline: 2px solid red;
+      &:hover .backface-info{
+        visibility: visible;
+        transition: all 1s;
+        // background-color: $black;
+      }
+      img {
+      // outline: 2px solid red;
+        width: 100%;
+      }
+    .blogRanking-event-info {
+      // outline: 2px solid red;
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      img {
+        width: 130%;
+        align-self: center;
+        border-radius: 10px;
+      }
+      .event-name {
+        @include sm-title($blue);
+        text-align: center;
+      }
+      .event-value{
+        align-self: center;        
+        .event-value-table {
+          td {
+            @include bodyP;
+            padding: 2px;
+            vertical-align: middle;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+          }
+        }        
+      }
+
+    }
+    .backface-info {
+      // outline: 2px solid red;
+      visibility: hidden;
+      text-align: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      &::after {
+        content:'';
+        width: 185px;
+        height: 185px;
+        border: 3px solid #E8D9C4;
+        border-radius: 50%;
+        position: absolute;
+        top: -55px;
+        left: 5px;
+      }
+      p {
+        @include sm-title($red);
+        padding-bottom: 10px;
+      }
+      .avgScore{
+        span {
+          color: $green;
+        }
+        img{
+          width:8%;
+        }
+      }
+    }
+  }
+
+
+  .blogRanking-btnContainer{
+    margin-top: 20px;
+  }
+
+
+  .moon{
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+  }
+  
+  .allstars {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    // bottom: 100%;
+  }
+  @-webkit-keyframes falling {
+    0%,100% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 1;
+    }
+    0% {
+      -webkit-transform: translate(100px, 0px);
+              transform: translate(100px, 0px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 200px);
+              transform: translate(0px, 200px);
+    }
+  }
+  @keyframes falling {
+    0%,100% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 1;
+    }
+    0% {
+      -webkit-transform: translate(100px, 0px);
+              transform: translate(100px, 0px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 200px);
+              transform: translate(0px, 200px);
+    }
+  }
+  .allstars [class^='star'] {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-animation: falling 2s infinite;
+            animation: falling 2s infinite;
+  }
+  .allstars .star1 {
+    position: absolute;
+    left: 7%;
+    bottom: 20%;
+    -webkit-animation-delay: -0.1s;
+            animation-delay: -0.1s;
+  }
+  .allstars .star2 {
+    position: absolute;
+    left: 28%;
+    bottom: 15%;
+    -webkit-animation-delay: -0.2s;
+            animation-delay: -0.2s;
+  }
+  .allstars .star3 {
+    position: absolute;
+    left: 84%;
+    bottom: 35%;
+    -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
+  }
+  .allstars .star4 {
+    position: absolute;
+    left: 93%;
+    bottom: 10%;
+    -webkit-animation-delay: -0.4s;
+            animation-delay: -0.4s;
+  }
+  .allstars .star5 {
+    position: absolute;
+    left: 13%;
+    bottom: 42%;
+    -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+  }
+  .allstars .star6 {
+    position: absolute;
+    left: 42%;
+    bottom: 18%;
+    -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
+  }
+  .allstars .star7 {
+    position: absolute;
+    left: 99%;
+    bottom: 40%;
+    -webkit-animation-delay: -0.7s;
+            animation-delay: -0.7s;
+  }
+  .allstars .star8 {
+    position: absolute;
+    left: 41%;
+    bottom: 4%;
+    -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+  }
+  .allstars .star9 {
+    position: absolute;
+    left: 14%;
+    bottom: 2%;
+    -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+  }
+  .allstars .star10 {
+    position: absolute;
+    left: 99%;
+    bottom: 13%;
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s;
+  }
+  .allstars .star11 {
+    position: absolute;
+    left: 97%;
+    bottom: 42%;
+    -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+  }
+  .allstars .star12 {
+    position: absolute;
+    left: 32%;
+    bottom: 48%;
+    -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
+  }
+  .allstars .star13 {
+    position: absolute;
+    left: 10%;
+    bottom: 6%;
+    -webkit-animation-delay: -1.3s;
+            animation-delay: -1.3s;
+  }
+  .allstars .star14 {
+    position: absolute;
+    left: 36%;
+    bottom: 16%;
+    -webkit-animation-delay: -1.4s;
+            animation-delay: -1.4s;
+  }
+  .allstars .star15 {
+    position: absolute;
+    left: 61%;
+    bottom: 33%;
+    -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
+  }
+  .allstars .star16 {
+    position: absolute;
+    left: 72%;
+    bottom: 5%;
+    -webkit-animation-delay: -1.6s;
+            animation-delay: -1.6s;
+  }
+  .allstars .star17 {
+    position: absolute;
+    left: 26%;
+    bottom: 11%;
+    -webkit-animation-delay: -1.7s;
+            animation-delay: -1.7s;
+  }
+  .allstars .star18 {
+    position: absolute;
+    left: 68%;
+    bottom: 48%;
+    -webkit-animation-delay: -1.8s;
+            animation-delay: -1.8s;
+  }
+  .allstars .star19 {
+    position: absolute;
+    left: 66%;
+    bottom: 3%;
+    -webkit-animation-delay: -1.9s;
+            animation-delay: -1.9s;
+  }
+  .allstars .star20 {
+    position: absolute;
+    left: 27%;
+    bottom: 10%;
+    -webkit-animation-delay: -2s;
+            animation-delay: -2s;
+  }
+  .allstars .star21 {
+    position: absolute;
+    left: 79%;
+    bottom: 27%;
+    -webkit-animation-delay: -2.1s;
+            animation-delay: -2.1s;
+  }
+  .allstars .star22 {
+    position: absolute;
+    left: 18%;
+    bottom: 15%;
+    -webkit-animation-delay: -2.2s;
+            animation-delay: -2.2s;
+  }
+  .allstars .star23 {
+    position: absolute;
+    left: 69%;
+    bottom: 40%;
+    -webkit-animation-delay: -2.3s;
+            animation-delay: -2.3s;
+  }
+  .allstars .star24 {
+    position: absolute;
+    left: 33%;
+    bottom: 24%;
+    -webkit-animation-delay: -2.4s;
+            animation-delay: -2.4s;
+  }
+  .allstars .star25 {
+    position: absolute;
+    left: 9%;
+    bottom: 25%;
+    -webkit-animation-delay: -2.5s;
+            animation-delay: -2.5s;
+  }
+  .allstars .star26 {
+    position: absolute;
+    left: 33%;
+    bottom: 31%;
+    -webkit-animation-delay: -2.6s;
+            animation-delay: -2.6s;
+  }
+  .allstars .star27 {
+    position: absolute;
+    left: 47%;
+    bottom: 5%;
+    -webkit-animation-delay: -2.7s;
+            animation-delay: -2.7s;
+  }
+  .allstars .star28 {
+    position: absolute;
+    left: 60%;
+    bottom: 29%;
+    -webkit-animation-delay: -2.8s;
+            animation-delay: -2.8s;
+  }
+  .allstars .star29 {
+    position: absolute;
+    left: 27%;
+    bottom: 7%;
+    -webkit-animation-delay: -2.9s;
+            animation-delay: -2.9s;
+  }
+  .allstars .star30 {
+    position: absolute;
+    left: 52%;
+    bottom: 11%;
+    -webkit-animation-delay: -3s;
+            animation-delay: -3s;
+  }
+
+
+
+
+// ====================================
+// 第六屏 footer
+footer{
+  width:100%;
+  position: relative;
+  top: -150px;
+}
+footer img{
+  width:100%;
+}
+
+footer p{
+  position: absolute;
+  text-align: center;
+  left: 0;
+  bottom: 20px;
+  right: 0;
+  margin: auto;
+  display: inline-block;
+}
+
+
+//-----------------------RWD==============================
+@media screen and (max-width: 1200px){
+
+  .index_dt {
+    display: none;
+  }
+
+  .index_RWD {
+    display: block;
+  }
+  
+  body {
+    background : url( http://api.thumbr.it/whitenoise-361x370.png?background=ebe4d4ff&noise=fffcff&density=71&opacity=33) center 0 repeat;
+  }
+
+  //第一屏--首頁
+  #rwd_backpack{width:20%;top:55%;left:1%;z-index:2;
+    transform: rotate(-15deg)}
+  #rwd_ticket{width:15%;top:65%;left:1%;z-index:3;
+    transform: rotate(15deg)}
+  #rwd_map{width:25%;top:55%;left:5%;z-index:1;
+    transform: rotate(-10deg)}
+  #rwd_notebook{width:20%;top:65%;left:-10%;z-index:5;
+    transform: rotate(-10deg)}
+  
+  .posleft{width:40%;top:25%;z-index:0;}
+  .posright{width:30%;top:20%;z-index:0;}
+  .green1-1{width:20%;top:80%;left:5%;z-index:2;}
+  .green1-3{width:20%;top:80%;left:20%;z-index:0;}
+  .green2-1{width:20%;top:80%;left:5%;z-index:0;}
+  .green2-2{width:10%;top:80%;left:-10%;z-index:1;}
+  .green3-1{width:20%;top:80%;left:10%;z-index:0;}
+
+  //第二屏--熱門活動
+
+  .screen-hot-plan {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    z-index: 5;
+    // outline: 2px solid blue;
+  }
+
+  .hot_plan_slider {
+    position: relative;
+    transform-style: preserve-3d;
+    // top: 50%;
+    // transform: translateY(-50%);
+    .btn_group {
+      position: absolute;
+      bottom: -60vh;
+      width: 100%;
+      // outline: 2px solid green;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      #leftBtn,
+      #rightBtn {
+        // outline: 2px solid green;
+        font-size: 30px;
+        padding: 2%;
+        display: block;
+      }
+      #leftBtn {
+        padding-right: 2%;
+      }
+      #rightBtn {
+        padding-right: 2%;
+      }
+    }
+  }
+
+  .title_box {
+    margin: 120px auto 30px;
+    text-align: center;
+    // outline: 2px solid red;
+    img {
+      width: 30vh;
+    }
+    h2 {
+      font-size: 0;
+    }
+  }
+
+  .cardFrame{
+    // padding: 2.5%;
+    // outline: 1px solid red;
+    position: absolute;
+      &::after {
+          content:'';
+          width: 90%;
+          height: 93%;
+          position: absolute;
+          top: 3%;
+          left: 4%;
+          border: 3px solid $brown;
+          border-radius: 13px;
+    }
+    .card{
+      border: 5px dotted $brown;
+      border-radius: 13px;
+      box-shadow: 10px 11px 14px -8px rgba(0,0,0,0.62);
+      background:url(http://api.thumbr.it/whitenoise-361x370.png?background=e8c789ff&noise=f2e2c6&density=19&opacity=46);
+      // background-color: #E8C689;
+      // outline: 1px solid red;
+      padding: 5%;
+      height: 100%;
+      position: relative;
+      .imgborder{
+        height:60%;
+        border-radius: 13px;
+        overflow: hidden;
+        // outline: 1px solid red;
+        img{
+          width: 130%;
+        }
+      }
+      .subTitle{
+        @include  md-title(#4286f4);
+        margin: 10px auto; 
+      }
+      .desc{
+        @include bodyP();
+      }
+      .starPlanGroup {
+          width: 90%;
+        //   outline: 2px solid red;
+          position: absolute;
+          bottom: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        .equalValue {
+          color: $green;
+          img {
+              width: 15px;
+              vertical-align: middle;
+          }
+        }  
+        .addToPlan {
+          @include btn($red,$yellow);
+          // margin: 10px auto; 
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+        }
+      }
+    }// card
+  } // cardFrame
+
+  .middleCardFrame {
+    width: 80%;
+    height: 50vh;
+    left: 10%;
+    z-index: 1;
+  }
+
+  .leftCardFrame,
+  .rightCardFrame {
+    width: 70%;
+    height: 40vh;
+    top: 5vh;
+  }
+
+  .leftCardFrame {
+    left: 2.5%;
+  }
+
+  .rightCardFrame {
+    right: 2.5%;
+  }
+
+
+  //第三屏--本月主打
+  .screen-monthly {
+    // outline: 2px solid blue;
+  }
+
+  .monthly-event-title{
+      @include big-title(#4286f4);
+      h2 {
+        text-align: center;
+        margin: 2.5% 0;
+        letter-spacing: 10px;
+      }
+      .monthly_desc{
+        @include sm-title($doubledarkGreen);
+        letter-spacing: 5px;
+        line-height: 1.5;
+        margin: 0 2.5%;
+    // outline: 2px solid blue;
+
+    }
+  }
+
+  .event{
+    width:95%;
+    margin: 50px 2.5%;
+    // outline: 2px solid red;
+    img{
+        width:100%;
+        border-radius: 13px;
+        margin-bottom: 10px;
+        border: 5px solid white;
+    }
+    .desc {
+      @include bodyP;
+      letter-spacing: 5px;
+    }
+    .subtitle{
+      @include  sm-title(#4286f4);
+      letter-spacing: 10px;
+      margin: 10px 0;
+      padding: 20px;
+      display: block;
+      background-image: url(../images/cloud_bg.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+  }
+
+  .makeplans {
+    @include btns($white,$doubledarkGreen);
+    width: 250px;
+    line-height: 50px;
+    display: block;
+    margin: 0 auto;
+  }
+
+//第四屏--線上訂票
+
+  .screen-order{
+    // height: 1000px;
+    position: relative;
+  
+    .bk_bear{
+      position: absolute;
+      bottom: 0;
+      left:10%;
+      width:18%;
+    }
+
+    .ticketsBord{
+      border-width: 40px;
+      border-style: solid;
+      -moz-border-image: url(../images/order_frame.png) 40 40 round;    /* 給 Firefox 看*/
+      -webkit-border-image:  url(../images/order_frame.png) 40 40 round;    /* 給 Safari 與 Chrome 看*/
+      -o-border-image: url(../images/order_frame.png) 40 40 round;        /* 給 Opera 看*/
+      border-image: url(../images/order_frame.png) 40 40 round;
+      width: 95%;
+      margin: 0 2.5%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .tickFrame{
+          background: no-repeat center/ contain url(../images/ticketBgHor.png);
+          width: 95%;
+          // margin: 2.5%;
+          padding: 10px;
+          // outline: 2px solid red;
+          position: relative;
+          display: flex;
+          .tickLeftBox {
+            width: 55%;
+          // outline: 2px solid red;
+
+            .tickPic {
+              // outline: 2px solid blue;
+              width: 100%;
+              height: 45%;
+              overflow: hidden;
+              margin: 10% auto 0;
+            }            
+            .bear{
+              // outline: 2px solid red;
+              display: block;
+              width: 80%;
+              margin: 0 auto;
+            }
+            .tickTxt {
+              width: 100%;
+              text-align: center;
+              align-self: center;
+              // outline: 2px solid green;
+              margin-top: 5%;
+              h3 {
+                @include big-title($white);
+              }
+              .tickRange {
+                @include bodyP;
+                color: $yellow;
+              }
+              .tickPrice {
+                @include bodyP;
+                color: $white;
+              }
+            }                    
+          }
+
+          .tickAmt {
+            align-self: center;
+            text-align: center;
+            display: flex;
+            margin: 0 5%;
+            width: 40%;
+            span {
+              width: 50%;
+              height: 38px;
+              display: block;
+              background-color: $white;
+              line-height: 2.3;
+            }
+            button {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #F0B81B;
+              margin: 0 5%;
+              border: none;
+              i {
+                width: 20px;
+                height: 20px;
+                font-size: 20px;
+                color: $white;
+              }
+            }
+
+          }
+        }
+    } // tickets
+  }
+
+  .goOrder {
+    @include btns($white,$doubledarkGreen);
+    width: 250px;
+    line-height: 50px;
+    display: block;
+    margin: 50px auto 0;
+  }
+
+
+  //第五屏--手札推薦
+
+  .screen-blog{
+
+    width: 95%;
+    margin: 0 2.5%;
+
+    .blog-left-container {
+      width: 100%;
+      text-align: left;
+
+    }
+
+    .blogRanking {
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+    }
+
+    .blogRanking-main-content {
+      width: 100%;
+      // outline: 2px solid red;
+      display: flex;
+      flex-wrap: wrap;
+      .blogRanking-article-left-group {
+        width: 100%;
+      }
+      .blogRanking-article-left {
+        .blogRanking-photo #blog-cover{
+          border-radius: 13px;
+          margin-bottom: 20px;
+          width: 100%;
+        }
+        p {
+          @include bodyP;
+        }    
+      }
+    }
+
+    .readMore{
+      cursor: pointer;
+      @include bodyP;
+      color: #4286f4;
+    }
+
+    .blogBoard{
+      vertical-align: top;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20% 0;
+    }
+
+    .blogRanking-event-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+      // outline: 2px solid red;
+      .blogRanking-event{
+        width: 200px;
+        height: 200px;
+        padding: 15px;
+        margin: 2.5%;
+        // border: 5px solid $brown;
+        background-color: $white;
+        border-radius: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        // outline: 2px solid red;
+          // &:hover {
+          //   // background-color: red;
+          //   // backgroun  d-color: $black;
+          // }
+          img {
+          // outline: 2px solid red;
+            width: 100%;
+          }
+        .blogRanking-event-info {
+          // outline: 2px solid red;
+          width: 60%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          img {
+            width: 130%;
+            align-self: center;
+            border-radius: 10px;
+          }
+          .event-name {
+            @include sm-title($blue);
+            text-align: center;
+          }
+          .event-value{
+            align-self: center;        
+            .event-value-table {
+              td {
+                @include bodyP;
+                padding: 5px;
+                vertical-align: middle;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+              }
+            }        
+          }
+        }
+        .backface-info {
+          // outline: 2px solid red;
+          display: block;
+          text-align: center;
+          p {
+            @include sm-title($red);
+            padding-bottom: 10px;
+          }
+          .avgScore{
+            span {
+              color: $green;
+            }
+            img{
+              width:8%;
+            }
+          }
+        }
+      }    
+    }
+
+
+    .eventaddBtnBox{
+      width: 100%;
+      margin: 10px auto;
+      #eventaddBtn {
+        @include btns($red,$yellow);
+        width: 150px;
+        display: block;
+        margin: auto;
+      }    
+    }
+
+    .blogRanking {
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        background-image: url(../images/border_before.png);
+        width: 100%;
+        height: 15%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: -100px;
+        left: 0;
+    }
+    &::after{
+        content: "";
+        display: block;
+        background-image: url(../images/border_after.png);
+        width: 100%;
+        height: 15%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        bottom: -120px;
+        left: -2%;
+    }
+  }
+
+
+
+
+
+}
+}
+//-----------------------RWD==============================

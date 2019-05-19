@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.flip{margin:0px;padding:5px;text-align:center;background:#E09697;cursor:pointer;font-family:'Arial';}
+.panel{margin:0px;padding:5px;text-align:center;background:#e5eecc;border:solid 1px #c3c3c3;display:none;font-family:'Arial';}
+</style>
+<body>
+    <div class="flip"><span class="1">Read more</span></div>
+<div class="panel">一化科技e-work一化科技e-work一化科技e-work一化科技e-work</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+$(function(){
+$(".flip").click(function(){
+    $(".panel").slideToggle("slow");
+    // $(".xs1").toggle();
+    // $(".xs2").toggle();
+  });});
+
+</script>
+</html>

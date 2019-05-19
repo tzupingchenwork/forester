@@ -1,0 +1,1174 @@
+@import "../base/var";
+@import "../base/font";
+@import "../base/common";
+@import "../page/plan";
+
+
+
+// 一屏：三項熱門活動介紹
+
+body {
+  overflow-x: hidden;
+}
+
+
+#backgounrd_animation {
+  width: 100%;
+  // outline: 5px solid red;
+  img {
+    position: absolute;
+  }
+
+  .head_tree_group_left {
+    #head_trunk_left {
+      // position: relative;
+      width: 15%;
+      top: 32%;
+      left: 6%;
+      opacity: 0;
+    }
+    #head_tree_left_leaf {
+      width: 20%;
+      // top: ;
+      left: 0;
+      opacity: 0;
+    }    
+  }
+  .head_tree_group_right {
+    // outline: 2px solid red;
+    #head_trunk_right {
+      width: 6%;
+      top: 30%;
+      right: 3%;
+      opacity: 0;
+    }
+    #head_tree_right_leaf {
+      width: 11.5%;
+      right: 0;
+      // top: -20px;
+      opacity: 0;
+    }    
+  }
+}
+
+.background_airballoon {
+  #bg_airballoon {
+    width: 30%;
+    position: absolute;
+    top: 1100px;
+    right: 0%;
+  }
+
+  #bg_cloud {
+      width: 100%;
+      position: absolute;
+      top: 2100px;
+      left: -1000px;
+  }
+
+  #bg_airballoon2 {
+      width: 25%;
+      position: absolute;
+      top: 3200px;
+      right: 0%;
+  }
+
+  #bg_cloud2 {
+    width: 100%;
+    position: absolute;
+    top: 4200px;
+    left: 1900px;
+  }
+
+  #bg_airballoon3 {
+    width: 20%;
+    position: absolute;
+    top: 4500px;
+    right: 0%;
+  }
+}
+
+.RWD_plan_div {
+  display: none;
+}
+
+.header_title_background {
+  // border: 2px solid red;
+  img {
+    display: block;
+    margin: 0 auto 50px;
+    max-width: 300px;
+    height: auto;
+    // border: 2px solid red;
+  }
+  h2 {
+    display: none;
+  }
+}
+
+
+[type=radio] {
+    display: none;
+}
+
+// #btn-go-plan-now {
+//   @include btn($white, $pink);
+//   width: 200px;
+//   margin: 0 auto 50px;
+//   display: block;
+// }
+
+.plan-screen-second {
+  @include screen-margin;
+}
+
+.plan-screen-first h2,
+.plan-screen-second h2,
+.plan-screen-confirmation h2 {
+  @include big-title($black);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#hot-event-container {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  // outline: 1px solid red;
+  label {
+    @include border-frame;
+    margin: auto;
+    padding: 10px 2%;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 0; 
+    right: 0;
+    cursor: pointer;
+    transition: transform .5s ease;
+    .hot-event-box  {
+      width: 100%;
+      margin: 10px auto;
+      text-align: left;
+      h3 {
+      @include md-title($blue);
+      margin: 30px 0;
+      }
+      p{
+      @include bodyP;
+      }
+      .hot-event-img img{
+        width: 100%;
+        height: 250px;
+      }
+      .euqal-add-box {
+        width: 90%;
+        // outline: 1px solid red;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        .equal-value {
+          align-self: flex-end;
+          @include bodyP;
+          font-weight: bold;
+          color: #4da45d;
+          img {
+            width: 18px;
+            vertical-align: top;
+          }
+        }
+        button {
+          @include btn($red,$yellow);
+          width: 200px;
+        }
+      }
+    }      
+  }
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(-100%,0,-100px);
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3 {
+  box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+  transform: translate3d(0,0,0);
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide1 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(100%,0,-100px);
+}
+
+// 二屏：活動選擇頁面
+// 篩選霸：上排
+
+.plan-container-step-one {
+  .bar-img-container {
+    display: flex;
+    justify-content: space-around;    
+    .bar-img-box {
+      width: 25%;
+      // outline: 1px solid red;
+      .value-item {
+        @include sm-title($black);
+        // outline: 1px solid green;
+        margin: 10px 0;
+        vertical-align: super;
+      }  
+      .value-pic {
+        width: 40px;
+      }    
+      .drag-img-box {
+        position: relative;
+        width: 100%;
+        margin: 10px 0;
+      }    
+    }
+  }
+}
+
+#family-range,
+#handmade-range,
+#survive-range {
+  margin: 5% 0;
+  border-radius: 13px;
+}
+
+
+#family-range .ui-slider-handle,
+#handmade-range .ui-slider-handle,
+#survive-range .ui-slider-handle {
+  border-radius: 50%; 
+  outline: none; 
+  background-color: $brightBlue; 
+}
+
+.plan-container-step-one,
+.plan-container-step-two,
+.plan-container-step-three,
+.plan-container-step-four,
+.plan-container-confirmation {
+  // outline: 1px solid blue;
+  @include border-frame;
+  width: 95%;
+  margin: 0 auto 100px;
+  position: relative;
+  &::before {
+    content:'';
+    display: block;
+    width: 70px;
+    height: 70px;
+    // border: 2px solid red;
+    position: absolute;
+    top: -75px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  h3 {
+    @include md-title($black);
+    margin: 10px;
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 5px;
+      background-color: $darkBrown;
+      margin-top: 10px;
+    }
+    .plan-explaination {
+      @include bodyP;
+      margin-left: 10px;
+      color: steelblue;
+      text-align: right;
+    }
+  }
+}
+
+.plan-container-step-one::before {background-image: url(../images/new/number1.png);}
+.plan-container-step-two::before {background-image: url(../images/new/number2.png);}
+.plan-container-step-three::before {background-image: url(../images/new/number3.png);}
+.plan-container-step-four::before {background-image: url(../images/new/number4.png);}
+.plan-container-confirmation::before {background-image: url(../images/new/number5.png);}
+
+
+// 活動規劃區：下左
+.second-screen-flex-group {
+  display: flex;
+}
+
+.all-event-container {
+  width: 75%;
+  display: flex;
+  // float: left;
+  // outline: 5px solid blue;
+  flex-wrap: wrap;
+  float: left;
+  .plan-option-list {
+    position: relative;
+    top: 10px;
+    right: 5%;
+    text-align: right;
+    width: 100%;
+    span {
+      @include btn($black,$brightGreen);
+      border-bottom: 2px solid $yellow;
+      width: 150px;
+      line-height: 50px;
+      margin-right: 20px;
+      // height: 30px;
+      a {
+        color: $black;
+      }
+    }
+    #list-plan {
+      @include bodyP;
+      font-weight: bold;
+      background-color: #85cfdc;
+      height: 40px;
+      border: none;
+      outline: none;
+    }
+  }
+  .event-detail-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 700px;
+    margin-top: 5%;
+    overflow: auto;
+  }
+}
+
+.event-drop-area {
+  width: 25%;
+  position: relative;
+  border-right: 5px dotted #aaa;
+  p {
+    @include sm-title($black);
+    padding: 0 0 2% 2%;
+    #event_hour,
+    #event_price {
+      color: $red;
+    }
+  }
+  .event-drop-circle {
+    width: 150px;
+    height: 150px;
+    border: 5px dashed $brown;
+    border-radius: 50%;
+    margin: 20px auto;
+    text-align: center;
+    @include big-title($black);
+    line-height: 150px;
+  }
+}
+
+// 活動規劃區：下右
+.event-detail-box {
+  width: 44%;
+  height: fit-content;
+  // outline: 1px solid red;
+  border: 5px solid $black;
+  border-radius: 13px;
+  position: relative;
+  margin: 2%;
+  cursor: pointer;
+  transition: .3s ease;
+  display: flex;
+  &:hover {
+    background-color: #fdf7bd;
+    transition: .3s ease;
+  }
+
+  .event_drop_zone {
+    width: 25%;
+  }
+
+  .eventItem {
+    width: 20%;
+    height: 100px;
+    border: 5px solid $black;
+    border-radius: 13px;
+    position: relative;
+    margin: 2%;
+    cursor: default;
+    transition: .3s ease;
+    display: flex;
+    .event-cover {
+      width: 30%;
+      height: 100px;
+      margin: 10px 10px 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      // outline: 1px solid red;
+      overflow: hidden;
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  .eventItem:hover {
+    background-color: rgba(253, 248, 187, 0.8);
+    box-shadow: 0px 0px 3px #796a5a inset; }
+
+  .event-cover {
+    width: 41%;
+    height: 100px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    // outline: 1px solid red;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+  }
+
+  .event-txt-box {
+    // outline: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0 10px 0;
+    height: 100px;
+    position: relative;
+    width: $width - 48%;
+    h4 {
+      @include md-title($blue);
+    }
+    table{
+      margin: 10px 0 10px 0;
+      width: 150px;
+      td {
+        // outline: 1px solid red;
+        width: 15px;
+        @include bodyP;
+        text-align: left;
+        vertical-align: middle;
+        img {
+          width: 25px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .value-pic-box{
+      @include bodyP;
+      color: #4da45d;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0;
+      img {
+        width: 18px;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .event-hour-price {
+    @include bodyP;
+    height: 100%;
+    width: 21%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    // outline: 2px solid red;
+    .event-hour-mark {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .event-hour {
+      position: absolute;
+    }
+    .event-price-mark {
+      position: absolute;
+      left: 0;
+      bottom: 50px;
+    }
+    .event-price {
+      position: absolute;
+      bottom: 50px;
+      right: 0;
+    }  
+    .fas.fa-plus-circle{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 30px;
+      color: $red;
+    }
+  }
+}
+
+.fas.fa-trash-alt {
+  position: relative;
+  top: 4%;
+  right: 0;
+  cursor: pointer;
+  display: none;
+}
+
+
+// 三屏：地圖座標
+.check-map-box {
+  margin: 2% 0;
+  img {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    // outline: 1px solid red;
+  }
+}
+
+//四屏：命名及封面照
+.name-cover-container {
+  margin: 2%;
+}
+
+.name-your-plan-container,
+.plan-cover-container {
+  // outline: 1px solid red;
+  margin: 2% auto;
+  text-align: left;
+  width: 50%;
+}
+
+.name-your-plan-container {
+  div {
+    margin-top: 4%;
+    @include sm-title($black);
+    input {
+      width: 100%;
+      height: 40px;
+      border-style: none;
+      vertical-align: middle;
+      border-bottom: 3px solid $brown;
+    }
+  }
+  p {
+    margin: 10px 0;
+    span {
+      color: $red;
+    }
+  }
+}
+
+.plan-cover-container {
+  margin-top: 4%;
+  // outline: 1px solid red;
+  p {
+    @include sm-title($black);
+  }
+  .upload-cover-box {
+    span {
+      @include bodyP;
+    }   
+  }
+  .choose-cover-box {
+    // outline: 2px solid red;
+    width: 100%;
+    margin-top: 1%;
+    .big_cover_post {
+      // outline: 2px solid red;
+        width: 100%;
+        height: 300px;
+        border: 3px solid $brown;
+        border-radius: 13px;
+        overflow: hidden;
+        img {
+        width: 120%;
+      }
+    }
+    .small-cover-pick-box {
+      width: 100%;
+      margin: 1% auto 0;
+      // outline: 1px solid red;
+      display: flex;
+      justify-content: space-between;
+      .dt_small_cover_pic {
+        width: 150px;
+        height: 100px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 3px solid $brown;
+        display: inline-block;
+        overflow: hidden;
+        cursor: pointer;
+        img {
+          width: 120%;
+        }
+      }
+    }
+  }
+}
+
+#finalize-my-plan,
+#confirm-and-buy-ticket {
+  @include btn($white,$doubledarkGreen);
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+//確認行程
+.confirmation-screen-flex-group {
+  // outline: 1px solid red;
+  display: flex;
+  .confirmation-event-drop-area {
+    border-right: none;
+    width: 50%;
+    // outline: 2px solid green;
+    .confirmation-event-oder-details-container {
+      display: flex;
+      .confirmation-event-order {
+        align-self: center;
+        // outline: 2px solid green;
+        margin-left: 2%;
+        width: 10%;
+        span {
+          display: block;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          text-align: center;
+          border: 2px solid $brown;
+          @include md-title($black);
+          line-height: 40px;
+        }
+      }
+    }
+    .confirmation-event-detail-box {
+      // outline: 1px solid red;
+      width: 100%;
+      cursor: default;
+      &:hover {
+        background: none;
+      }
+      .event-txt-box {
+        width: $width - 50%;
+      }
+    }
+  }
+  .confirmation-right-container {
+    border-left: 5px dotted #aaa;
+    width: 50%;
+  }
+  .confirmation-name-your-plan-container {
+    width: 96%;
+    // outline: 2px solid blue;
+    text-align: left;
+    margin: 0 2% 30px 2%;
+    div {
+      margin-top: 0;
+    }
+    input {
+      width: 100%;
+      height: 40px;
+    }
+  }
+  .confirmation-cover-map-container {
+    width: 100%;
+    .confirmation-name-cover-container {
+      width: 96%;
+      // outline: 2px solid green;
+      margin: 0 2% 30px 2%;
+      .confirmation-plan-cover-container {
+        width: 100%;
+        text-align: left;
+        .confirmation-big-cover-post img {
+          width: 99%;
+        }
+      }
+    }
+  }
+}
+
+.confirmation-check-map-box {
+  p {
+    @include sm-title($black);
+    margin-left: 2%;
+  }
+  img {
+    display: block;
+    width: 96%;
+    margin: 0 2% 30px 2%;
+  }
+}
+
+.confirm-buy-btn-box {
+  // outline: 2px solid red;
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  margin-bottom: 100px;
+  #btn_confirm_my_plan {
+    @include btn($red,$yellow);
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin: 0 auto;
+  }
+  #btn_confirm_and_buy_ticket {
+    @include btn($white,$darkBlueGreen);
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+#add_to_plan_list{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.671);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 5;
+  }
+
+  .lightbox-add-to-plan-list{
+      width: 30%;
+      height: 30vh;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 13px;
+      padding: 2%;
+      // outline: 2px solid red;
+      img {
+        width: 50%;
+        display: block;
+        margin: auto;
+        // outline: 2px solid red;
+        position: relative;
+        top: -30px;
+        // height: 300px;
+      }
+      h4 {
+          @include md-title($blue);
+          text-align: center;
+          // outline: 2px solid red;
+      }
+      p{
+          text-align: center;
+          margin: auto;
+      }
+      hr{
+          margin: 3% 5%;
+      }
+      .btn-box-index-order{
+          margin: 7% 10%; 
+          text-align: center;
+          #btn-go-to-index {
+            @include btn($red,$yellow);
+            line-height: 50px;
+
+          }
+          #btn-go-to-order {
+              @include btn($white,$darkBlueGreen);
+              line-height: 50px;
+          }
+          a:nth-child(1){float: left;}
+          a:nth-child(2){float: right;}
+      }
+      
+  }
+  
+.footer-try-image {
+  background: #fff;
+  background-size: contain;
+}
+
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+//=============RWD===========================RWD=================
+
+
+
+@media screen and (max-width: 1200px){
+    #desk_plan_div {
+        display: none;
+    }
+
+    .RWD_plan_div {
+        display: block;
+    }
+
+    .plan-container-step-one,
+    .plan-container-confirmation{
+        margin-bottom: 50px;
+    }
+
+    .plan-container-step-one, 
+    .plan-container-step-two, 
+    .plan-container-step-three, 
+    .plan-container-confirmation {
+        width: 90%;
+        // height: 70vh;
+    }
+
+    .plan-container-step-one,
+    .plan-container-step-two,
+    .plan-container-step-three,
+    .plan-container-step-four,
+    .plan-container-confirmation {
+        h3 {
+        .plan-step {
+            font-size: 18px;
+        }
+        }
+    }
+    
+    .plan-container-step-one {
+        margin: 0 auto 100px;
+        .bar-img-container {
+        // outline: 1px solid red;
+        display: block;
+        margin: 0 auto;
+        .bar-img-box {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px 5%;
+            background-color: antiquewhite;
+        }
+        }
+    }
+
+    .plan-container-step-two {
+        .all-event-container {
+            width: 100%;
+            #fixedAddCart {
+                position: fixed;
+                z-index: 2;                
+                top: 200px;
+                right: 0;
+                background-color: $brightBlue;
+                width: 60px;
+                height: 130px;
+                border: 4px solid $darkBlueGreen;
+                border-right: none;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                img {
+                    width: 50px;
+                    display: block;
+                    margin: 10px auto;
+                }
+                p {
+                    text-align: center;
+                    @include bodyP;
+                }
+                #showNumber {
+                    @include sm-title($white);
+                    background-color: transparent;
+                    border: none;
+                }
+                .showEventDiv {
+                    position: absolute;
+                    background-color: #eee;
+                    border-radius: 10px;
+                    top: 0px;
+                    right: 80px;
+                    padding: 5px;
+                    text-align: center;
+                    display: none;
+                    border: 4px solid $darkBlueGreen;
+                    .showEventTable {
+                        overflow: auto;
+                        border-collapse: collapse;
+                        // border: 1px solid $darkBrown;
+                        border-radius: 10px;
+                        width: 150px;
+                        height: 30px;
+                        font-size: 12px;
+                        th {
+                            @include bodyP;
+                            color: $blue;
+                            border-bottom: 2px dashed $darkBlueGreen;
+                        }
+                        td {
+                            padding: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    #family-range,
+    #handmade-range,
+    #survive-range {
+        margin: 5% 0;
+        border-radius: 13px;
+    }
+    
+    
+    #family-range .ui-slider-handle,
+    #handmade-range .ui-slider-handle,
+    #survive-range .ui-slider-handle {
+        border-radius: 50%; 
+        outline: none; 
+        background-color: $brightBlue; 
+    }
+
+    .all-event-container {
+        position: relative;
+        .checkAllPlan {
+            border-radius: 13px;
+            background-color: $darkBlueGreen;
+            border-bottom: 2px solid $darkBrown;
+            width: 120px;
+            display: block;
+            margin-left: 2%;
+            position: relative;
+            color: $white;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+        }
+        .buttonGroup {
+            position: absolute;
+            right: 5%;
+            #eventNewest {
+                cursor: pointer;
+                height: 30px;
+                margin-right: 10px;
+                background-color: $brightBrown;
+                @include bodyP;
+                border-radius: 10px;
+            }
+            #eventHotest {
+                cursor: pointer;
+                height: 30px;
+                background-color: $brightBrown;
+                @include bodyP;
+                border-radius: 10px;
+            }  
+        }
+    }
+
+    
+    .event-detail-box {
+        width: 100%;
+        .event-cover {
+            width: 30%;
+        }
+        .event-txt-box {
+            width: 60%;
+            #eventName {
+                @include sm-title($blue);
+                font-size: 20px;
+            }
+            .allPlan-value-table {
+                width: 130px;
+            }
+        }
+        
+        .event-hour-price {
+        @include bodyP;
+        height: 100%;
+        width: 42px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // outline: 2px solid red;
+        }  
+    }
+
+
+    .plan-container-step-three {
+        .name-cover-container {
+        margin: 5%;
+        .name-your-plan-container {
+            width: 100%;
+        }
+        .plan-cover-container {
+            width: 100%;
+        }
+        }
+    }
+
+    .RWD_choose-cover-box {
+        // outline: 2px solid red;
+        width: 100%;
+        margin-top: 1%;
+        .big_cover_post {
+            // outline: 2px solid red;
+            width: 100%;
+            height: 200px;
+            border: 3px solid $brown;
+            border-radius: 13px;
+            overflow: hidden;
+            img {
+            width: 120%;
+            }
+        }
+        .small-cover-pick-box {
+        width: 100%;
+        margin: 1% auto 0;
+        // outline: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        .small_cover_pic {
+            width: 150px;
+            height: 80px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 3px solid $brown;
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+                img {
+                width: 140%;
+                }
+            }
+        }
+    }
+    
+    .plan-cover-container {
+        .choose-cover-box {
+            margin-top: 3%;
+        }    
+    }
+    
+    .confirmation-check-map-box img {
+        margin: 3% 2% 30px 2%;
+    }
+    
+    
+    .event-drop-area {
+        width: 40%;
+        border: none;
+    }
+
+    .confirmation-screen-flex-group{
+        .confirmation-right-container {
+        width: 56%;
+        margin-right: 2%;
+        padding-left: 2%;
+        .name-your-plan-container {
+            width: 98%;
+        }
+        }    
+    }
+    
+    .confirm-buy-btn-box{
+        #btn_confirm_my_plan {
+            @include btn($red,$yellow);
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #next-btn-pick-my-event,
+        #btn-confirm-and-buy-ticket {
+        @include btn($white,$darkBlueGreen);
+        width: 150px;
+        display: block;
+        margin: 0 auto;
+        }
+    }
+
+    
+    #add_to_plan_list{
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.671);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 5;
+        }
+
+    .lightbox-add-to-plan-list{
+        width: 80%;
+        height: 30vh;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 13px;
+        padding: 2%;
+        // outline: 2px solid red;
+        img {
+        width: 300px;
+        display: block;
+        margin: auto;
+        // outline: 2px solid red;
+        position: relative;
+        top: -30px;
+        // height: 300px;
+        }
+        h4 {
+            @include md-title($blue);
+            text-align: center;
+            // outline: 2px solid red;
+        }
+        p{
+            text-align: center;
+            margin: auto;
+            line-height: 1.5;
+        }
+        hr{
+            margin: 20px 50px;
+        }
+        .btn-box-index-order{
+            margin: 10px 50px; 
+            text-align: center;
+            #btn-go-to-index {
+            @include btn($red,$yellow);
+            line-height: 50px;
+
+            }
+            #btn-go-to-order {
+                @include btn($white,$darkBlueGreen);
+                line-height: 50px;
+            }
+            a:nth-child(1){float: left;}
+            a:nth-child(2){float: right;}
+        }
+
+}
+
+
+
+  .plan-container-confirmation::before {background-image: url(../../images/new/number4.png);}
+
+  
+}
+
+
+

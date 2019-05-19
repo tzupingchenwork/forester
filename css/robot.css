@@ -1,0 +1,326 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #d1c0a5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7e6b5a;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #483e36;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.introRobotBox {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 330px;
+  z-index: 999;
+  -webkit-box-shadow: -2px 2px 4px #777;
+          box-shadow: -2px 2px 4px #777;
+}
+
+.introRobotBox .introRobotCome {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  background-color: #ddd;
+  border-radius: 30px;
+  top: -200px;
+  left: 50px;
+  padding: 5px 15px;
+}
+
+.introRobotBox .introRobotCome p {
+  font-size: 16px;
+  margin: 10%;
+}
+
+.introRobotBox .introRobotCome::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -19px;
+  left: 170px;
+  border-right: 10px solid transparent;
+  border-left: 6px solid transparent;
+  border-top: 20px solid #ddd;
+  -webkit-transform: skewX(40deg);
+          transform: skewX(40deg);
+  background-color: #fff;
+}
+
+.introRobotBox .introRobot1 {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #DAB980;
+  position: relative;
+}
+
+.drimg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  vertical-align: middle;
+}
+
+.introRobotBox .introRobot1 h3 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #666;
+  font-weight: 900;
+}
+
+.introRobotBox .introRobot1 .robotToggle {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  text-align: center;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.introRobotBox .introRobot1 .robotToggle span {
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+}
+
+.introRobotBox .introRobot2 {
+  background-image: url();
+  padding: 5px;
+  height: 300px;
+  overflow: auto;
+  display: none;
+  background-color: rgba(218, 185, 128, 0.678);
+}
+
+.introRobotBox .introRobot2 .introDinoWords {
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #fff;
+  max-width: 60%;
+  clear: both;
+  margin: 0 0 5px 15px;
+  font-size: 16px;
+  line-height: 22px;
+  position: relative;
+}
+
+.introRobotBox .introRobot2 .introDinoWords::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: -15px;
+  border-right: 16px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  -webkit-transform: skewY(30deg);
+          transform: skewY(30deg);
+}
+
+.introRobotBox .introRobot2 .introDinoWords::after {
+  content: attr(data-time);
+  white-space: pre;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -33px;
+  line-height: 12px;
+  color: #000;
+}
+
+.introRobotBox .introRobot2 .introMyCute {
+  max-width: 60%;
+  float: right;
+  font-size: 16px;
+  position: relative;
+  clear: both;
+}
+
+.introRobotBox .introRobot2 .introMyCute img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.introRobotBox .introRobot2 .introMyCute::after {
+  content: "已讀\a" attr(data-time);
+  white-space: pre;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -33px;
+  line-height: 12px;
+  color: #000;
+}
+
+.introRobotBox .introRobot2 .introMyWords {
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #f5bc18;
+  max-width: 60%;
+  float: right;
+  margin: 0 15px 5px 0;
+  font-size: 16px;
+  line-height: 22px;
+  position: relative;
+  clear: both;
+}
+
+.introRobotBox .introRobot2 .introMyWords::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 7px;
+  right: -15px;
+  border-left: 16px solid #f5bc18;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  -webkit-transform: skewY(-30deg);
+          transform: skewY(-30deg);
+}
+
+.introRobotBox .introRobot2 .introMyWords::after {
+  content: "已讀\a" attr(data-time);
+  white-space: pre;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -33px;
+  line-height: 12px;
+  color: #000;
+}
+
+.introRobotBox .introRobot2:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.introRobotBox .introRobot3 {
+  background-color: #DAB980;
+  display: none;
+}
+
+.introRobotBox .introRobot3 ul li {
+  display: inline-block;
+}
+
+.introRobotBox .introRobot3 ul li img {
+  width: 50px;
+  cursor: pointer;
+}
+
+.autotext {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #fff;
+  border-radius: 10%;
+}
+
+.introRobotBox .introRobot4 {
+  display: none;
+}
+
+.introRobotBox .introRobot4 textarea {
+  width: 70%;
+  height: 80px;
+}
+
+.introRobotBox .introRobot4 button {
+  width: 30%;
+  height: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .introRobotBox {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    right: 0;
+  }
+  .introRobotBox .introRobot1 {
+    height: 60px;
+  }
+  .introRobotBox .introRobot2 {
+    height: calc(90vh - 230px);
+  }
+  .introRobotBox .introRobot3 {
+    height: 70px;
+  }
+  .introRobotBox .introRobot4 {
+    height: 80px;
+  }
+}
+/*# sourceMappingURL=robot.css.map */

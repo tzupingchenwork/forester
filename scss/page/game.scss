@@ -1,0 +1,415 @@
+@import "../base/_var.scss";
+@import "../base/_reset.scss";
+@import "../layout/_header.scss";
+@import "../layout/_desktop.scss";
+@import "../base/_common.scss";
+@import "../base/_font.scss";
+
+
+// *{
+//     outline: #000 1px solid ;
+// }
+
+.game-container{
+    max-width: $dt;
+    margin: auto;
+    position: relative;
+    .game-map{
+        text-align: center;
+        .map{
+            width: 60%;
+            @media screen and (max-width:$mb){
+                width: 100%;
+            }
+        }
+        .allStuffPoint{
+            transition: 1s;
+            &:hover{
+                scale: 1.2;
+            }
+        }
+    }
+    .game-rule{
+        width: 100px;
+        position: absolute;
+        bottom: 0;
+        left: 7%;
+        cursor: pointer;
+        // text-align: center;
+        img{
+            width: 100%;
+            opacity: 0.7;
+            @media screen and (max-width:$mb){
+                width: 50px;
+                height: 60px;
+        }
+        }
+        span{
+            @include md-title($black);
+            font-size: 20px;
+            font-weight: bolder;
+            position: absolute;
+            bottom: 38%;
+            left: 12%;
+            @media screen and (max-width:$mb){
+                bottom: 20%;
+                left: -12%
+        }
+        }
+    }
+    .game-rule-content{
+        background-image: url(../images/game/paper.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 5%;
+        width: 60%;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation:fly 1s;
+        max-width: $dt;
+        text-align: center;
+        z-index: 2;
+        max-width: 1200px;
+        @media screen and (max-width:$mb){
+            background-image: none;
+            background-color: #f7e6d3;
+        }
+        &::after{
+            content: '';
+            display: block;
+            width: 45%;
+            height: 35%;
+            background-image: url(../images/blog/talk.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            bottom: 14%;
+            left: 26%;
+            @media screen and (max-width:$mb){
+                bottom: 5%;
+                left: 15%;
+            }
+        }
+        #close{
+            position: absolute;
+            right: 11%;
+            top: 18%;
+            display: flex;
+            justify-content:flex-end;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: 50px;
+            transition: .3;
+            &:hover{
+                transform: scale(1.1);
+            }
+            &::after{
+                content: '';
+                display: block;
+                background-image: url(../images/game/icon-close.png);
+                background-repeat: no-repeat;
+                width: 30px;
+                height: 30px;
+                background-size: contain;
+            }
+            @media screen and (max-width:$mb){
+                right: 2%;
+                top: 3%;
+            }
+        }
+        h2{
+            @include big-title($red);
+            margin: 10px 0;
+            // text-align: start;
+            margin-top: 9%;
+            position: relative;
+            left: 5%;
+            @media screen and (max-width:$mb){
+                position: relative;
+                left: 0;
+            }
+        }
+        p{
+            @include bodyP;
+            // text-align: start;
+            position: relative;
+            left: 1%;
+            margin-top: 18px;
+        }
+        img{
+            width: 40%;
+            margin-top: 6%;
+            @media screen and (max-width:$mb){
+                display: none;
+            }
+        }
+        .game-rule-bearTalk{
+            @include md-title($black);
+            display: inline-block;
+            padding: 12px;
+            width: 35%;
+            height: 50px;
+            border-radius: 20px;
+            background-color: $white;
+            position: absolute;
+            // left: 65%;
+            // top:30%;
+            left: 52%;
+            top: 46%;
+            line-height: 1.7;
+            @media screen and (max-width:$mb){
+                left: 35%;
+                top: 52%;
+                border-radius: 50%;
+            }
+            >span{
+                display: block;
+                width: 100%;
+                font-size: 16px;
+            @media screen and (max-width:$mb){
+                display: block;
+                width:100%;
+                font-size: 14px;
+            }
+        }
+            &::after{
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 20px 5px 0;
+                border-color: transparent $white transparent transparent;
+                position: relative;
+                left: -10%;
+                top: -9px;
+            }
+        }
+    }
+}
+@keyframes fly {
+    0% { left: -1000px; }
+    100% {left: 20%;}
+}
+.photoWall{
+    max-width: $dt;
+    margin: 5%;
+    padding: 5%;
+    .header_title_background {
+        img {
+          display: block;
+          margin: 0 auto 50px;
+          max-width: 300px;
+          height: auto;
+        }
+        h2 {
+          display: none;
+        }
+      }
+    .photoWall-container{
+        display: flex;
+        justify-content: flex-end;
+        .photowall-heading{
+            @include md-title($black);
+        }
+        .photoWall-upload{
+            button{
+                @include btn($white,$doubledarkGreen);
+                width: 180px;
+            }
+            
+        }
+        #photoUploadArea{
+            display:none;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            height: 50%;
+            border-radius: 20px;
+            background-color:rgba($color: $pink, $alpha: 0.95) ;
+            padding: 5%;
+            #closeUpload{
+                position: absolute;
+                z-index: 11;
+                right: 4%;
+                top: 8%;
+                display: flex;
+                justify-content:flex-end;
+                cursor: pointer;
+                font-weight: bolder;
+                font-size: 50px;
+                &::after{
+                    content: '';
+                    display: block;
+                    background-image: url(../images/game/icon-close.png);
+                    background-repeat: no-repeat;
+                    width: 30px;
+                    height: 30px;
+                    background-size: contain;
+                }
+            }
+            img{
+                width: 40%;
+                text-align: center;
+                margin: auto;
+            }
+            #upFile{
+                display: block;
+                margin: 10px auto;
+            }
+            #photoSub{
+                @include btn($white,$red);
+                display: block;
+                margin:20px auto;
+            
+            }
+        }
+    }
+    #container{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 8% 0%;
+        padding: 3%;
+        text-align: center;
+    }
+        .photo-item{
+            @media screen and (max-width:$mb){
+                width: 80%;
+                margin: 5%;
+            }
+            // cursor: pointer;  
+            width: 27%;
+            margin:5% 2%;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            border-radius: 10px;
+            // &::before{
+            //     content: "";
+            //     display: block;
+            //     background-image: url(../images/game/edit_blog_up_frame.png);
+            //     width: 100%;
+            //     height: 26%;
+            //     background-size: cover;
+            //     position: absolute;
+            //     top: -20%;
+            //     left: 0;
+            // }
+            .photo-img{
+                width: 100%;
+                margin: auto;
+                text-align: center;
+                img{
+                    width: 100%;
+                    padding-top: 10px;
+                }
+            }
+            .photo-author{
+                display: block;
+                margin: 10px;
+            .photo-btn-container{
+                display: flex;
+                justify-content: space-between;
+                margin: 10% 0;
+            }
+            
+            span{
+                @include bodyP;
+                vertical-align: middle;
+            }
+            img{
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+            }
+            .photoBtn{
+                display: flex;
+                justify-content: space-evenly;
+                vertical-align: middle;
+                margin: 10px 0;
+                transition: 1s;
+                
+                span{
+                    vertical-align: 5px;
+                }
+                img{
+                    width: 25px;
+                    height: 25px;
+                }
+                div{
+                    cursor: pointer;
+                    margin: 0 auto;
+                    width: 50%;
+                    // display: flex;
+                    justify-content: space-around;
+                    border-radius: 10px;
+                    transition: 1s;
+                    &:hover{
+                        transform: scale(1.2);
+                        transition: 1s;
+                        background-color: #eee;
+                    }
+                }
+            }
+        }
+
+}
+
+//背景
+#scene1{
+    position: absolute;
+    z-index: -2;
+    width: 20%;
+    display: flex;
+    left: 70%;
+    justify-content: space-around;
+    .fly1{
+        position: absolute;
+        right: -5vw;
+        img{
+            width: 20vw;
+            opacity: 0.2;
+        }
+    }
+}
+#scene2{
+    position: absolute;
+    width: 20%;
+    top: 18%;
+    left: -0.8%;
+    z-index: -2;
+    .fly1{
+        position: absolute;
+        left: -5vw;
+        img{
+            width: 20vw;
+            opacity: 0.3;
+        }
+    }
+}
+#scene3{
+    position: absolute;
+    z-index: -2;
+    width: 20%;
+    display: flex;
+    left: 10%;
+    justify-content: space-around;
+    .fly1{
+        position: absolute;
+        img{
+            width: 30vw;
+            opacity: 0.5;
+        }
+    }
+}
